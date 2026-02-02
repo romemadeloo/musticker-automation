@@ -1,22 +1,29 @@
 import { test, expect } from '@playwright/test';
-
-// Credentials 
-const EMAIL = 'trainee81.glophics@gmail.com';
-const PASSWORD = '1234567';
+import { ENV } from '../../utils/env';
+import users from '../../fixtures/users.json';
 
 test('Login with correct email and password', async ({ page }) => {
   // 1. Open homepage
-  await page.goto('https://www.ozstickerprinting.com/');
-  // 2. Click on "My Account" link
+  await page.goto(ENV.baseURL);
+
+  // 2. Click on "My Account"
   await page.getByRole('link', { name: 'My Account' }).click();
-  // 3. Click on "Sign in to Account" button
+
+  // 3. Click on "Sign in to Account"
   await page.getByRole('button', { name: 'Sign in to Account' }).click();
-  // 4. Fill in email
-  await page.locator('[id="#modal"] input[type="text"]').click();
-  await page.locator('[id="#modal"] input[type="text"]').fill(EMAIL);
-  // 5. Fill in password
-  await page.locator('input[type="password"]').click();
-  await page.locator('input[type="password"]').fill(PASSWORD);
-  // 6. Click on "Sign In" button
+
+  // 4. Fill email
+  const emailInput = page.locator('[id="#modal"] input[type="text"]');
+  await expect(emailInput).toBeVisible();
+  await emailInput.fill(users.validUser.email);
+
+  // 5. Fill password
+  const passwordInput = page.locator('[id="#modal"] input[type="password"]');
+  await passwordInput.fill(users.validUser.password);
+
+  // 6. Submit
   await page.getByRole('button', { name: 'Sign In' }).click();
+
+  // 7. Assertion (IMPORTANT 🔥)
+  await expect(page.locator('[id="#modal"]')).toBeHidden({ timeout: 10000 });
 });
