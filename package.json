@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "loginCorrect": "playwright test testCase/01-login-correct-password.spec.ts",
-    "loginCorrect:headed": "playwright test testCase/01-login-correct-password.spec.ts --headed",
-    "loginWrong": "playwright test testCase/02-login-wrong-password.spec.ts",
-    "loginWrong:headed": "playwright test testCase/02-login-wrong-password.spec.ts --headed"
+    "loginCorrect": "playwright test tests/functional-test/01-login-correct-password.spec.ts",
+    "loginCorrect:headed": "playwright test tests/functional-test/01-login-correct-password.spec.ts --headed",
+    "loginWrong": "playwright test tests/functional-test/02-login-wrong-password.spec.ts",
+    "loginWrong:headed": "playwright test tests/functional-test/02-login-wrong-password.spec.ts --headed"
   },
   "keywords": [],
   "author": "",

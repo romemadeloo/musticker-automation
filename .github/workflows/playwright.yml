@@ -1,4 +1,4 @@
-name: Playwright Login Test
+name: Musticker Test Suite
 
 on:
   push:
