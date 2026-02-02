@@ -42,8 +42,8 @@ jobs:
         run: npx playwright install --with-deps
 
       # 6️⃣ Run your specific test
-      - name: Run login test (headed)
-        run: npm run loginCorrect:headed
+      - name: Run login test
+        run: npm run loginCorrect
 
       # 7️⃣ Upload Playwright report as artifact
       - name: Upload Playwright report
