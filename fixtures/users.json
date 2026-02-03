@@ -2,5 +2,9 @@
   "validUser": {
     "email": "trainee81.glophics@gmail.com",
     "password": "1234567"
+  },
+    "invalidUser": {
+    "email": "invaliduser@gmail.com",
+    "password": "123123"
   }
 }
