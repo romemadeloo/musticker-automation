@@ -42,8 +42,8 @@ jobs:
         run: npx playwright install --with-deps
 
       # 6️⃣ Run your specific test
-      - name: Run login test
-        run: npm run loginWrong
+      - name: Run Functional test
+        run: npx playwright test tests/functional-test
 
       # 7️⃣ Upload Playwright report as artifact
       - name: Upload Playwright report
