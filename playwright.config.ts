@@ -33,7 +33,7 @@ export default defineConfig({
 
   // Shared settings for all projects
   use: {
-    baseURL: ENV.baseURL, // 🔥 THIS IS THE IMPORTANT PART
+    baseURL: ENV.baseURL, // THIS IS THE IMPORTANT PART
     headless: true,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10 * 1000,
